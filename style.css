@@ -29,10 +29,8 @@ header {
 }
 
 .left-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
+    position: relative;
+    padding: 10px 10px 0px 10px;
     width: 170px;
     height: calc(100vh - 60px);
     background-color:black;
@@ -67,7 +65,7 @@ header {
 
 .playlist {
     margin-top: 15px;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: bold;
     color: white;
 }
@@ -88,10 +86,6 @@ header {
     background-color: rgb(158, 158, 158);;
 }
 
-.fa-plus {
-    
-}
-
 .create {
     display: flex;
     align-items: center;
@@ -99,12 +93,18 @@ header {
     color: rgb(158, 158, 158);
 }
 
+.lista-playlist {
+    color: rgb(158, 158, 158);    
+}
 
-
-
+.nome-playlist {
+    margin-top: 10px;
+}
 
 .left-col-bottom {
-
+    position: absolute;
+    bottom: 10px;
+    width: 150px;
 }
 
 .install {
@@ -117,8 +117,9 @@ header {
 }
 
 hr {
-    height: 2px; 
-    background-color: rgb(158, 158, 158); 
+    height: 1px; 
+    background-color: rgb(158, 158, 158);
+    margin-top: 7px; 
     border: none;
 }
 
@@ -154,7 +155,9 @@ hr {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+        left: 12px;
+        bottom: 5px;
+        }
     .spotify span {
         display: none;
     }
@@ -163,6 +166,9 @@ hr {
     }
     .playlist {
         display: none;
+    }
+    .lista-playlist {
+        display: none;    
     }
     .navigation-list {
         margin-top: 10px;
