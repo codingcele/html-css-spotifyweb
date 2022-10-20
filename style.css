@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ‘Montserrat’, sans-serif;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(46, 37, 37);
+
+}
+
+.upgrade {
+    color: white;
+    padding: 8px 20px 8px 20px;
+    margin-right: 4px;
+    font-size: 9px;
+    border-radius: 15px 15px 15px 15px;
+    border: 1px solid white;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    width: 170px;
+    height: calc(100vh - 60px);
+    background-color:black;
+    font-size: 9px;
+}
+
+.spotify {
+    color: white;
+    font-size: 22px;
+}
+
+.navigation-list {
+    margin-top: 15px;
+}
+
+.lgt-gray {
+    color: rgb(158, 158, 158);
+}
+
+.search {
+    margin-top: 10px;
+}
+
+.library {
+    margin-top: 10px;
+}
+
+.fa-house, .fa-magnifying-glass, .fa-book {
+    font-size: 13px;
+}
+
+
+.playlist {
+    margin-top: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.crea-play {
+    display: flex;
+    margin-top: 10px;
+}
+
+.gray-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    width: 22px;
+    height: 22px;
+    background-color: rgb(158, 158, 158);;
+}
+
+.fa-plus {
+    
+}
+
+.create {
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+    color: rgb(158, 158, 158);
+}
+
+
+
+
+
+.left-col-bottom {
+
+}
+
+.install {
+    margin-bottom: 4px;
+    color: rgb(158, 158, 158);
+}
+
+.install span {
+    margin-left: 6px;
+}
+
+hr {
+    height: 2px; 
+    background-color: rgb(158, 158, 158); 
+    border: none;
+}
+
+.fa-circle-user {
+    font-size: 16px;
+}
+
+.john {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.john span {
+    margin-left: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 350px) {
+    .left-column {
+        align-items: center;
+        width: 40px;
+        padding: 2px 0px 6px 0px;
+    }
+    .left-column-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-col-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .spotify span {
+        display: none;
+    }
+    .navigation-list span {
+        display: none;
+    }
+    .playlist {
+        display: none;
+    }
+    .navigation-list {
+        margin-top: 10px;
+    }
+    .crea-play {
+        display: none;
+    }
+    .install span {
+        display: none;
+    }
+    .john span {
+        display: none;
+    }
+    hr {
+        display: none;
+    }    
+}
