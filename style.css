@@ -9,11 +9,13 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    align-self: flex-end;
     position: absolute;
+    right: 0;
     z-index: -1;
-    height: 80px;
-    width: 100%;
-    background-color: rgb(46, 37, 37);
+    height: 60px;
+    width: calc(100vw - 160px);
+    background-color: rgb(8, 11, 18);
 
 }
 
@@ -27,13 +29,15 @@ header {
 }
 
 .left-column {
-    position: relative;
-    padding: 10px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 5px 10px;
     width: 160px;
-    height: 537px;
-    margin-bottom: 79px;
+    height: calc(100vh - 60px);
     background-color:black;
     font-size: 9px;
+    overflow: auto;
 }
 
 .spotify {
@@ -49,6 +53,18 @@ header {
     color: rgb(158, 158, 158);
 }
 
+.home {
+    position: relative;
+}
+
+#selec-green {
+    position: absolute;
+    left: -10px;
+    height: 100%;
+    width: 2px;
+    background-color: rgb(192, 255, 49);
+}
+
 .search {
     margin-top: 10px;
 }
@@ -60,7 +76,6 @@ header {
 .fa-house, .fa-magnifying-glass, .fa-book {
     font-size: 13px;
 }
-
 
 .playlist {
     margin-top: 15px;
@@ -101,8 +116,7 @@ header {
 }
 
 .left-col-bottom {
-    position: absolute;
-    bottom: 5px;
+    margin-top: 20px;
 }
 
 .install {
@@ -138,6 +152,50 @@ hr {
     font-weight: bold;
 }
 
+.central-cont {
+    background-color: rgb(20, 25, 34);
+    width: calc(100vw - 160px);
+    height: calc(100vh - 120px);
+    padding: 0px 10px 10px 15px;
+    position: absolute;
+    top: 60px;
+    left: 160px;
+}
+
+.central-cont-titoli {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 520px;
+    margin: 5px auto;
+}
+
+.central-cont-titoli div {
+    margin: 4px 4px;
+    font-size: 10px;
+    color: rgb(158, 158, 158);
+}
+
+#in-evidenza {
+    position: relative;
+}
+
+#selected-title {
+    position: absolute;
+    left: 21px;
+    bottom: -4px;
+    height: 2px;
+    width: 22px;
+    background-color: rgb(192, 255, 49);
+}
+
+.recent {
+    color: white;
+    margin-top: 15px;
+}
+
+
 
 footer {
     display: flex;
@@ -146,9 +204,9 @@ footer {
     align-items: center;
     bottom: 0;
     padding: 0px 5px 0px 5px;
-    background-color: rgb(65, 61, 61);
+    background-color: rgb(40, 40, 40);
     width: 100%;
-    height: 80px;
+    height: 60px;
     z-index: 4;
 }
 
@@ -272,7 +330,16 @@ footer {
 }
 
 
+
+
+
+
+
+
 @media screen and (max-width: 400px) {
+    header {
+        width: calc(100vw - 40px)
+    }
     .left-column {
         align-items: center;
         width: 40px;
@@ -351,5 +418,35 @@ footer {
     }
     .play span {
         font-size: 5px;
-    }    
+    }
+    .central-cont {
+        width: calc(100vw - 40px);
+        left: 40px;
+    }   
+}
+
+@media screen and (max-width:700px) {
+    .central-cont-titoli {
+        flex-wrap: wrap;
+        width: 90%;
+    }     
+}
+
+@media screen and (max-width: 292px) {
+    .foot-left-text {
+        width: 35px;
+    }
+    .foot-left-figures {
+        margin: 0px;
+    }
+    .playing-bar {
+        width: 15vw;
+        margin: 0px 4px;
+    }
+    .foot-right-bar {
+        width: 30px;
+    }
+    #mini-bar {
+        width: 10px;
+    }
 }
