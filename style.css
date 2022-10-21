@@ -173,7 +173,7 @@ hr {
 }
 
 .central-cont-titoli div {
-    margin: 4px 4px;
+    margin: 6px;
     font-size: 10px;
     color: rgb(158, 158, 158);
 }
@@ -193,7 +193,7 @@ hr {
 
 .recent {
     color: white;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .albums-container {
@@ -206,6 +206,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .round img {
@@ -226,7 +227,8 @@ hr {
 
 .title {
     color: white;
-    margin-top: 10px;
+    max-width: 150px;
+    text-align: center;
 }
 
 .subtitle {
@@ -237,7 +239,7 @@ hr {
 
 .created-for-john {
     color: white;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 
