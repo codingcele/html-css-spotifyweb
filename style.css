@@ -191,6 +191,14 @@ hr {
     background-color: rgb(192, 255, 49);
 }
 
+.white:hover {
+    color: white;
+}
+
+.cursor:hover {
+    cursor: pointer;
+}
+
 .recent {
     color: white;
     margin-top: 25px;
