@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify</title>
+    <link rel="icon" href="img/spotify.webp" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/53b34e5099.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="spotify">
     
     <header>
         <div class="upgrade">
@@ -22,7 +23,7 @@
         <div class="left-column-top">
             <div class="spotify">
                 <i class="fa-brands fa-spotify"></i>
-                <span>Spotify</span>
+                <div>Spotify</div>
             </div>
     
             <div class="navigation-list lgt-gray">
@@ -90,7 +91,7 @@
             <hr>
             <div class="john">
                 <i class="fa-solid fa-circle-user"></i>
-                <span>John Doe</span>
+                <span>Marco Celegato</span>
             </div>
         </div>
 
@@ -99,14 +100,14 @@
 
     <div class="central-cont">
         <div class="central-cont-titoli">
-            <div id="in-evidenza" class="white cursor">
+            <div id="in-evidenza" class="white pointer">
                 IN EVIDENZA <span id="selected-title"></span>
             </div>
-            <div class="white cursor">PODCAST</div>
-            <div class="white cursor">CLASSIFICHE</div>
-            <div class="white cursor">GENERI E MOOD</div>
-            <div class="white cursor">NUOVE USCITE</div>
-            <div class="white cursor">SCOPRI</div>
+            <div class="white pointer">PODCAST</div>
+            <div class="white pointer">CLASSIFICHE</div>
+            <div class="white pointer">GENERI E MOOD</div>
+            <div class="white pointer">NUOVE USCITE</div>
+            <div class="white pointer">SCOPRI</div>
         </div>
 
         <div class="albums">
@@ -114,124 +115,50 @@
                 Recently played
             </h4>
             <div class="albums-container">
-                <div class="albums-image">
+                <div v-for="song in songs" class="albums-image">
                     <div class="image">
-                        <img src="img/metal_lifting.jpg" alt="">
+                        <img v-bind:src="song.image" alt="">
                     </div>
                     <h6 class="title">
-                        Heavy Metal
+                        {{ song.title }}
                     </h6>
                     <div class="subtitle">
-                        Subtitle
-                    </div>
-                </div>
-                <div class="albums-image">
-                    <div class="image">
-                        <img src="img/stranger.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        Stranger Things, Vol. 1 (a Netflix Original Series Soundtrack)
-                    </h6>
-                    <div class="subtitle">
-                        Kyle Dixon & Michael Stein
-                    </div>
-                </div>
-                <div class="albums-image">
-                    <div class="image">
-                        <img src="img/aquietplace.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        A quiet place
-                    </h6>
-                    <div class="subtitle">
-                        Subtitle
-                    </div>
-                </div>
-                <div class="albums-image">
-                    <div class="image">
-                        <img src="img/split.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        Split
-                    </h6>
-                    <div class="subtitle">
-                        Subtitle
-                    </div>
-                </div>
-                <div class="albums-image">
-                    <div class="image">
-                        <img src="img/cure.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        A cure for wellness
-                    </h6>
-                    <div class="subtitle">
-                        Subtitle
-                    </div>
-                </div>
-                <div class="albums-image">
-                    <div class="image">
-                        <img src="img/sinister.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        Sinister
-                    </h6>
-                    <div class="subtitle">
-                        Subtitle
+                        {{ song.author }}
                     </div>
                 </div>
             </div>
             <h4 class="created-for-john">
-                Creato per John Doe
+                Creato per te
             </h4>
-            <div class="subtitle">
+            <div class="subtitle bigger">
                 Più ascolti, più accurati saranno i suggerimenti.
             </div>
             <div class="albums-container">
-                <div class="albums-image">
+                <div v-for="playlist in suggestedPlaylists" class="albums-image">
                     <div class="image">
-                        <img src="img/radar.jpeg" alt="">
+                        <img v-bind:src="playlist.image" alt="">
                     </div>
                     <h6 class="title">
-                        Release Radar
+                        {{ playlist.name }}
                     </h6>
                     <div class="subtitle">
-                        Subtitle
-                    </div>
-                </div>
-                <div class="albums-image">
-                    <div class="image">
-                        <img src="img/mixdaily.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        Daily Mix 1
-                    </h6>
-                    <div class="subtitle">
-                        Subtitle
+                        {{ playlist.description }}
                     </div>
                 </div>
             </div>
             <h4 class="created-for-john">
                 Artisti più popolari
             </h4>
-            <div class="subtitle">
+            <div class="subtitle bigger">
                 Più ascolti, più accurati saranno i suggerimenti.
             </div>
             <div class="albums-container">
-                <div class="albums-image">
+                <div v-for="artist in mostPopularArtists" class="albums-image">
                     <div class="image round">
-                        <img src="img/youg.jpeg" alt="">
+                        <img v-bind:src="artist.image" alt="">
                     </div>
                     <h6 class="title">
-                        Ludovico Einaudi
-                    </h6>
-                </div>
-                <div class="albums-image">
-                    <div class="image round">
-                        <img src="img/einaudi.jpeg" alt="">
-                    </div>
-                    <h6 class="title">
-                        Lana Del Rey
+                        {{ artist.name }}
                     </h6>
                 </div>
             </div>
@@ -264,13 +191,16 @@
         
         <div class="foot-mid">
             <div class="player-buttons">
-                <i class="fa-solid fa-shuffle"></i>
-                <i class="fa-solid fa-backward-step"></i>
-                <i class="fa-regular fa-circle-play"></i>
-                <i class="fa-solid fa-forward-step"></i>
-                <i class="fa-solid fa-rotate-right"></i>
+                <i class="fa-solid fa-shuffle pointer"></i>
+                <i class="fa-solid fa-backward-step pointer"></i>
+                <div class="playContainer">
+                    <i v-bind:class="{ active: !showPause }" @click="togglePlayerButtons" id="play" class="fa-regular fa-circle-play play pointer"></i>
+                    <i v-bind:class="{ active: showPause }" @click="togglePlayerButtons" class="fa-regular fa-circle-pause pause pointer"></i>
+                </div>
+                <i class="fa-solid fa-forward-step pointer"></i>
+                <i class="fa-solid fa-rotate-right pointer"></i>
             </div>
-            <div class="play">
+            <div class="playLine">
                 <span>0:25</span>
                 <div class="playing-bar">
                     <div class="mini-playing-bar"></div>
@@ -289,5 +219,30 @@
 
     </footer>
 
+    <!-- <script>
+        let play = document.getElementById("play");
+        function playMusic() {
+            let audio = new Audio("MiaMia.mp3");
+            audio.play();
+        }
+
+        function togglePlayerButtons() {
+            const playButton = document.querySelector('.play');
+            const pauseButton = document.querySelector('.pause');
+            
+            if (playButton.style.visibility === 'visible') {
+                playButton.style.visibility = 'hidden';
+                pauseButton.style.visibility = 'visible';
+            } else {
+                playButton.style.visibility = 'visible';
+                pauseButton.style.visibility = 'hidden';
+            }
+        }
+
+        play.addEventListener("click", togglePlayerButtons);
+
+    </script> -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
